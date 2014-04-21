@@ -1,3 +1,10 @@
+/*
+Author: Aaronn Kelly
+Date began: 15/3/14
+Made for Arduino Uno
+
+*/
+
 int val = 0;
 int powerreq =0 ; // value received from pc for ideal power out.
 const float feedbackFactor = 0.009765624; //given by (5/1024)*2  or Vout/analogRead max * 2
