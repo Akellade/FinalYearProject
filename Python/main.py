@@ -1,6 +1,11 @@
+#Python Version 2.7.5
+#Author: Aaronn Kelly
+#Date begin: 21/04/14
+
+
 import serial
 
-ser = serial.Serial(
+ser = serial.Serial( #This sets up the serial comms
     port='COM5',\
     baudrate=9600,\
     parity=serial.PARITY_NONE,\
