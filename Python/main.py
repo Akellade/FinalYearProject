@@ -30,7 +30,7 @@ def mainRead( ):
 	
 def sendData():
 	powerrequired = input('Enter the power required: ')
-	ser.write(powerrequired)
+	ser.write(str(powerrequired).encode())
 
 sendData();
 mainRead();
