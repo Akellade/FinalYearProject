@@ -2,28 +2,36 @@
 #Author: Aaronn Kelly
 #Date begin: 21/04/14
 
+#Crude program that continually reads the serial port the arduino is\
+# connected to and prints to terminal.
+
 
 import serial
 
-ser = serial.Serial( #This sets up the serial comms
-    port='COM5',\
-    baudrate=9600,\
-    parity=serial.PARITY_NONE,\
-    stopbits=serial.STOPBITS_ONE,\
-    bytesize=serial.EIGHTBITS,\
-        timeout=0)
+ser = serial.Serial(port='/dev/tty.usbmodem411', baudrate=9600)
+buffer=[]#buffer of values
+headers=["Vin","POut","Preq","PWM"]#column headers
 
-print("connected to: " + ser.portstr)
+def mainRead( ):
+	print("connected to: " + ser.portstr)
+	while 1:
+		
+		if len(buffer)==4: #if the buffer is full then:
+			#send values to gui
+			#Save to file
+			print headers #print the column headers
+			print buffer #print the values
+			del buffer[:] #Clear the contents of the array
+		else:
+			val = ser.read()
+			buffer.append(val)
+		#	print headers
+			#print buffer
+	
+def sendData():
+	powerrequired = input('Enter the power required: ')
+	ser.write(powerrequired)
 
-#this will store the line
-line = []
+sendData();
+mainRead();
 
-while True:
-    for c in ser.read():
-        line.append(c)
-        if c == '\n':
-            print("Line: " + line)
-            line = []
-            break
-
-ser.close()
