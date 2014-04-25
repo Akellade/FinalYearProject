@@ -1,3 +1,8 @@
+#
+# First tutorial for GUI, modifying for requirements.
+#
+#
+
 import Tkinter
 
 class simpleapp_tk(Tkinter.Tk): #inherit from Tkinter.Tk the base class for windows
@@ -22,23 +27,63 @@ class simpleapp_tk(Tkinter.Tk): #inherit from Tkinter.Tk the base class for wind
 		#labels
 		self.labelVariable = Tkinter.StringVar()
 		label =Tkinter.Label(self,textvariable=self.labelVariable, anchor="w" ,fg="white" ,bg="black") #create label
-		label.grid(column=0,row=1,columnspan=1,sticky='EW') #add label to grid
+		label.grid(column=0,row=1,columnspan=1,sticky='E') #add label to grid
 		self.labelVariable.set(u"Power Out")
 		
 		self.labelVariable = Tkinter.StringVar()
 		label =Tkinter.Label(self,textvariable=self.labelVariable, anchor="w" ,fg="white" ,bg="black") #create label
-		label.grid(column=0,row=2,columnspan=1,sticky='EW') #add label to grid
+		label.grid(column=1,row=1,columnspan=1,sticky='W') #add label to grid
+		self.labelVariable.set(u"12345")
+		
+		self.labelVariable = Tkinter.StringVar()
+		label =Tkinter.Label(self,textvariable=self.labelVariable, anchor="w" ,fg="white" ,bg="black") #create label
+		label.grid(column=2,row=1,columnspan=1,sticky='E') #add label to grid
+		self.labelVariable.set(u"Watts")
+		
+		self.labelVariable = Tkinter.StringVar()
+		label =Tkinter.Label(self,textvariable=self.labelVariable, anchor="w" ,fg="white" ,bg="black") #create label
+		label.grid(column=0,row=2,columnspan=1,sticky='E') #add label to grid
 		self.labelVariable.set(u"Power Required")
 		
 		self.labelVariable = Tkinter.StringVar()
 		label =Tkinter.Label(self,textvariable=self.labelVariable, anchor="w" ,fg="white" ,bg="black") #create label
-		label.grid(column=1,row=1,columnspan=1,sticky='EW') #add label to grid
+		label.grid(column=1,row=2,columnspan=1,sticky='W') #add label to grid
+		self.labelVariable.set(u"12345")
+		
+		self.labelVariable = Tkinter.StringVar()
+		label =Tkinter.Label(self,textvariable=self.labelVariable, anchor="w" ,fg="white" ,bg="black") #create label
+		label.grid(column=2,row=2,columnspan=1,sticky='E') #add label to grid
+		self.labelVariable.set(u"Watts")
+		
+		self.labelVariable = Tkinter.StringVar()
+		label =Tkinter.Label(self,textvariable=self.labelVariable, anchor="w" ,fg="white" ,bg="black") #create label
+		label.grid(column=0,row=3,columnspan=1,sticky='E') #add label to grid
 		self.labelVariable.set(u"Voltage Out")
 		
 		self.labelVariable = Tkinter.StringVar()
 		label =Tkinter.Label(self,textvariable=self.labelVariable, anchor="w" ,fg="white" ,bg="black") #create label
-		label.grid(column=1,row=2,columnspan=1,sticky='EW') #add label to grid
+		label.grid(column=1,row=3,columnspan=1,sticky='W') #add label to grid
+		self.labelVariable.set(u"12345")
+		
+		self.labelVariable = Tkinter.StringVar()
+		label =Tkinter.Label(self,textvariable=self.labelVariable, anchor="w" ,fg="white" ,bg="black") #create label
+		label.grid(column=2,row=3,columnspan=1,sticky='E') #add label to grid
+		self.labelVariable.set(u"Volts")
+		
+		self.labelVariable = Tkinter.StringVar()
+		label =Tkinter.Label(self,textvariable=self.labelVariable, anchor="w" ,fg="white" ,bg="black") #create label
+		label.grid(column=0,row=4,columnspan=1,sticky='E') #add label to grid
 		self.labelVariable.set(u"PWM Duty Cycle")
+		
+		self.labelVariable = Tkinter.StringVar()
+		label =Tkinter.Label(self,textvariable=self.labelVariable, anchor="w" ,fg="white" ,bg="black") #create label
+		label.grid(column=1,row=4,columnspan=1,sticky='W') #add label to grid
+		self.labelVariable.set(u"1")
+		
+		self.labelVariable = Tkinter.StringVar()
+		label =Tkinter.Label(self,textvariable=self.labelVariable, anchor="w" ,fg="white" ,bg="black") #create label
+		label.grid(column=2,row=4,columnspan=1,sticky='E') #add label to grid
+		self.labelVariable.set(u"%")
 		
 		#Layout Properties
 		self.grid_columnconfigure(0,weight=1) #widjets adjust to window size

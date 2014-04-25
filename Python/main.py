@@ -33,6 +33,12 @@ def sendData():
 	powerrequired = input('Enter the power required: ')
 	ser.write(str(powerrequired).encode())
 
-sendData();
-mainRead();
+def parent(): #Master Function call
+	while 1:
+		thread.start_new(mainRead) #start Serial read
+		if raw_input() == 'q': #When Q is pressed, open new thread, which will read input and send to arduino
+			thread.start_new(sendData)
+		elif raw_input() == 'x': #when x is pressed, end the processs
+			break
 
+parent()
