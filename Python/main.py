@@ -7,8 +7,9 @@
 
 
 import serial
-
-ser = serial.Serial(port='/dev/tty.usbmodem411', baudrate=9600)
+from multiprocessing import process
+ 
+ser = serial.Serial(port='/dev/tty.usbmodem621', baudrate=9600)
 buffer=[]#buffer of values
 headers=["Vin","POut","Preq","PWM"]#column headers
 
