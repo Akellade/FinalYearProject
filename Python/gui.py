@@ -13,21 +13,39 @@ class simpleapp_tk(Tkinter.Tk): #inherit from Tkinter.Tk the base class for wind
 		self.entry = Tkinter.Entry(self, textvariable=self.entryVariable) # CREATE widget
 		self.entry.grid(column=0,row=0, sticky='EW')#Add widget to the layout manager
 		self.entry.bind("<Return>", self.OnPressEnter)
-		self.entryVariable.set(u"Enter Text Here.")
+		self.entryVariable.set(u"Enter Required Power (1-9)")
 		
-		button = Tkinter.Button(self, text=u"Click me !", command=self.OnButtonClick) #create button
+		button = Tkinter.Button(self, text=u"Update", command=self.OnButtonClick) #create button
 		button.grid(column=1,row=0) #add button to grid
 		
-		self.labelVariable = Tkinter.StringVar()
-		label =Tkinter.Label(self,textvariable=self.labelVariable, anchor="w" ,fg="white" ,bg="blue") #create label
-		label.grid(column=0,row=1,columnspan=2,sticky='EW') #add label to grid
-		self.labelVariable.set(u"Hello!")
 		
+		#labels
+		self.labelVariable = Tkinter.StringVar()
+		label =Tkinter.Label(self,textvariable=self.labelVariable, anchor="w" ,fg="white" ,bg="black") #create label
+		label.grid(column=0,row=1,columnspan=1,sticky='EW') #add label to grid
+		self.labelVariable.set(u"Power Out")
+		
+		self.labelVariable = Tkinter.StringVar()
+		label =Tkinter.Label(self,textvariable=self.labelVariable, anchor="w" ,fg="white" ,bg="black") #create label
+		label.grid(column=0,row=2,columnspan=1,sticky='EW') #add label to grid
+		self.labelVariable.set(u"Power Required")
+		
+		self.labelVariable = Tkinter.StringVar()
+		label =Tkinter.Label(self,textvariable=self.labelVariable, anchor="w" ,fg="white" ,bg="black") #create label
+		label.grid(column=1,row=1,columnspan=1,sticky='EW') #add label to grid
+		self.labelVariable.set(u"Voltage Out")
+		
+		self.labelVariable = Tkinter.StringVar()
+		label =Tkinter.Label(self,textvariable=self.labelVariable, anchor="w" ,fg="white" ,bg="black") #create label
+		label.grid(column=1,row=2,columnspan=1,sticky='EW') #add label to grid
+		self.labelVariable.set(u"PWM Duty Cycle")
+		
+		#Layout Properties
 		self.grid_columnconfigure(0,weight=1) #widjets adjust to window size
 		self.resizable(True,False) #limits the window to only resize horizontally
 		self.update()
-        self.geometry(self.geometry())       
-		self.entry.focus_set()
+		self.geometry(self.geometry())       
+		self.entry.focus_set() #Unexpected indent
 		self.entry.selection_range(0,Tkinter.END)
 		
 		
